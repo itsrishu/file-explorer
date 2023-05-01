@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Suggestion from './components/Suggestion'
-import { searchItem } from './dummyBackend/'
+import { searchItem } from '../../dummyBackend'
 
 function TypeAhead() {
 	const [text, setText] = useState('')

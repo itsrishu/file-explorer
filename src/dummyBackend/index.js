@@ -1,4 +1,4 @@
-import fruits from '../data/'
+import fruits from '../pages/typeahead/data/'
 
 function searchItem(keyword) {
 	return new Promise((resolve) => {

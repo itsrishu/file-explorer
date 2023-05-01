@@ -25,7 +25,7 @@ function Suggestion({ items, keyword }) {
 	}
 
 	function renderItems() {
-		return items.map((item) => {
+		return items?.map((item) => {
 			return (
 				<div className='flex items-center p-[2px]'>
 					<>
