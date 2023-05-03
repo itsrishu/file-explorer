@@ -5,7 +5,7 @@ function searchItem(keyword) {
 		let result = []
 		setTimeout(() => {
 			fruits.forEach((element) => {
-				if (element.includes(keyword)) {
+				if (element.toLowerCase().includes(keyword.toLowerCase())) {
 					result.push(element)
 				}
 			})

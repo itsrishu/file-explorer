@@ -23,8 +23,6 @@ function TypeAhead() {
 		}
 	}, [inputRef])
 
-	console.log(apiResult, 'apiResultapiResultapiResult')
-
 	return (
 		<div className='flex justify-center items-center flex-col'>
 			<input
