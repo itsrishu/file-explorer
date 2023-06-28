@@ -39,7 +39,7 @@ const ImageCarousel = ({ images, interval = 3000 }) => {
         <img
           src={images[currentImageIndex]}
           alt="Carousel Image"
-          className="h-[500px] w-[100%]"
+          className="h-[500px] w-[100%] rounded-[8px]"
         />
         <div
           className="mx-[24px] cursor-pointer"
