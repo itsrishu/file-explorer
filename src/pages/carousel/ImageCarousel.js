@@ -52,7 +52,7 @@ const ImageCarousel = ({ images, interval = 3000 }) => {
       <div className="flex justify-center items-center mt-[20px]">
         {images.map((image, index) => (
           <div
-            className={`h-[24px] w-[24px] rounded-[50%] ${
+            className={`h-[8px] w-[8px] rounded-[50%] ${
               currentImageIndex === index ? "bg-gray-800" : "bg-gray-400"
             } mr-[8px] cursor-pointer`}
             onClick={handleClick.bind(null, index)}
