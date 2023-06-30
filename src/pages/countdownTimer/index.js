@@ -1,12 +1,13 @@
-import React from 'react'
-import Timer from './Timer'
+import React from "react";
+import Timer from "./Timer";
+//import Pcr from "./Pcr";
 
 function CountdownTimer({}) {
-	return (
-		<div>
-			<Timer seconds={560} />
-		</div>
-	)
+  return (
+    <div>
+      <Timer seconds={30} />
+    </div>
+  );
 }
 
-export default CountdownTimer
+export default CountdownTimer;
