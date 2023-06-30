@@ -1,85 +1,67 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-// const Pcr = ({ hours, minutes, seconds }) => {
-//   const [remainingTime, setRemainingTime] = useState({
-//     hours,
-//     minutes,
-//     seconds,
-//   });
-//   const [isRunning, setIsRunning] = useState(false);
+const NO_OF_SECS_IN_1_MINS = 5;
 
-//   useEffect(() => {
-//     let interval;
+const Pcr = ({ seconds }) => {
+  const [time, setTime] = useState(seconds);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef();
 
-//     const startTimer = () => {
-//       interval = setInterval(() => {
-//         setRemainingTime((prevTime) => {
-//           const updatedTime = { ...prevTime };
+  useEffect(() => {
+    startTimer();
+    return () => {
+      clearInterval(timerRef.current);
+    };
+  }, []);
 
-//           if (updatedTime.seconds === 0) {
-//             if (updatedTime.minutes === 0) {
-//               if (updatedTime.hours === 0) {
-//                 clearInterval(interval);
-//                 setIsRunning(false);
-//                 return updatedTime;
-//               }
-//               updatedTime.hours--;
-//               updatedTime.minutes = 4;
-//               updatedTime.seconds = 5;
-//             } else {
-//               updatedTime.minutes--;
-//               updatedTime.seconds = 5;
-//             }
-//           } else {
-//             updatedTime.seconds--;
-//           }
+  const startTimer = () => {
+    setIsPaused(false);
+    timerRef.current = setInterval(() => {
+      setTime((prev) => {
+        if (prev === 0) {
+          clearInterval(timerRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
 
-//           return updatedTime;
-//         });
-//       }, 1000);
-//     };
+  const formatTime = (time) => {
+    const seconds = Math.floor(time % 5)
+      .toString()
+      .padStart(2, "0");
+    const minutes = Math.floor((time % 25) / 5)
+      .toString()
+      .padStart(2, "0");
+    const hours = Math.floor(time / 25)
+      .toString()
+      .padStart(2, "0");
+    return `${hours}:${minutes}:${seconds}`;
+  };
 
-//     if (isRunning) {
-//       startTimer();
-//     }
+  const handlePauseAndResume = () => {
+    if (timerRef?.current) {
+      clearInterval(timerRef.current);
+    }
+    setIsPaused(true);
+  };
 
-//     return () => clearInterval(interval);
-//   }, [isRunning]);
+  const handleReset = () => {
+    if (timerRef?.current) {
+      clearInterval(timerRef.current);
+    }
+    setTime(seconds);
+    setIsPaused(false);
+  };
 
-//   const handleStart = () => {
-//     setIsRunning(true);
-//   };
+  return (
+    <div>
+      <div>{formatTime(time)}</div>
+      <button onClick={handlePauseAndResume}>Pause</button>
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  );
+};
 
-//   const handlePause = () => {
-//     setIsRunning(false);
-//   };
-
-//   const handleReset = () => {
-//     setRemainingTime({ hours, minutes, seconds });
-//     setIsRunning(false);
-//   };
-
-//   return (
-//     <div>
-//       <h2>Countdown Timer</h2>
-//       <p>
-//         {`${remainingTime.hours
-//           .toString()
-//           .padStart(2, "0")}:${remainingTime.minutes
-//           .toString()
-//           .padStart(2, "0")}:${remainingTime.seconds
-//           .toString()
-//           .padStart(2, "0")}`}
-//       </p>
-//       <button onClick={handleStart} disabled={isRunning}>
-//         Start
-//       </button>
-//       <button onClick={handlePause} disabled={!isRunning}>
-//         Pause
-//       </button>
-//       <button onClick={handleReset}>Reset</button>
-//     </div>
-//   );
-// };
-
-// export default Pcr;
+export default Pcr;
