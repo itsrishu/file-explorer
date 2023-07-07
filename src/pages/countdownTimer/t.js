@@ -1,5 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
+
+//https://api.disneyapi.dev/character
+
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -33,7 +36,7 @@ const options = {
 	threshold: 1.0,
 }
 
-export default function InfiniteScroll() {
+export default function Home() {
 	const [characters, setCharacters] = useState([])
 	const [otherInfo, setOtherInfo] = useState({})
 	const [name, setName] = useState('')
