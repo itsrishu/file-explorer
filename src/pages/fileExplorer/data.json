@@ -1,0 +1,32 @@
+{
+	"id": 1,
+	"title": "src",
+	"isFolder": true,
+	"items": [
+		{
+			"id": 2,
+			"title": "components",
+			"isFolder": true,
+			"items": [
+				{
+					"id": "6",
+					"title": "button.js",
+					"isFolder": false,
+					"items": []
+				}
+			]
+		},
+		{
+			"id": 3,
+			"title": "constants",
+			"isFolder": true,
+			"items": []
+		},
+		{
+			"id": 4,
+			"title": "config.js",
+			"isFolder": false,
+			"items": []
+		}
+	]
+}
