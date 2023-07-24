@@ -35,3 +35,21 @@ import React from 'react'
 // }
 
 // export default RedirectButton;
+
+// import React from 'react';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import Home from './Home';
+// import Trending from './Trending';
+
+// function App() {
+//   return (
+//     <Router>
+//       <Switch>
+//         <Route exact path="/" component={Home} />
+//         <Route path="/trending" component={Trending} />
+//       </Switch>
+//     </Router>
+//   );
+// }
+
+// export default App;
