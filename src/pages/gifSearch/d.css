@@ -1,0 +1,16 @@
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr); /* 5 columns with equal width */
+	gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+	background-color: #f0f0f0;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
