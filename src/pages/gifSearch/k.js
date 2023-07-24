@@ -18,3 +18,20 @@ export default function App() {
 		</div>
 	)
 }
+
+import React from 'react'
+
+// function RedirectButton() {
+//   const handleButtonClick = () => {
+//     window.open('/trending', '_blank');
+//   };
+
+//   return (
+//     <div>
+//       <h1>Welcome to My App</h1>
+//       <button onClick={handleButtonClick}>Go to Trending</button>
+//     </div>
+//   );
+// }
+
+// export default RedirectButton;
