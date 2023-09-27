@@ -1,0 +1,39 @@
+{
+	"title": "root",
+	"id": 1,
+	"isFolder": true,
+	"items": [
+		{
+			"title": "components",
+			"id": 2,
+			"isFolder": true,
+			"items": [
+				{
+					"title": "Button",
+					"id": 3,
+					"isFolder": false,
+					"items": []
+				},
+				{
+					"title": "Input",
+					"id": 4,
+					"isFolder": false,
+					"items": []
+				}
+			]
+		},
+		{
+			"title": "Hooks",
+			"id": 5,
+			"isFolder": true,
+			"items": [
+				{
+					"title": "useDebounce",
+					"id": 6,
+					"isFolder": false,
+					"items": []
+				}
+			]
+		}
+	]
+}

@@ -61,6 +61,7 @@ function App() {
 
 	const handleObserver = useCallback(
 		(entries) => {
+			console.log('sssss')
 			const target = entries[0]
 			if (target.isIntersecting && !isFetching && hasMore) {
 				hitApi(text)
