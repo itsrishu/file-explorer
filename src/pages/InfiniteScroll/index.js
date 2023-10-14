@@ -57,7 +57,7 @@ function App() {
 		}
 	}
 
-	const debouncedApiCall = debounce(hitApi, 300)
+	const debouncedApiCall = useCallback(debounce(hitApi, 300), [])
 
 	const handleObserver = useCallback(
 		(entries) => {

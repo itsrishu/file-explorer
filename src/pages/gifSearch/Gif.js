@@ -27,7 +27,10 @@ function Gif({ item }) {
 					<div className='bg-gray-200 animate-pulse rounded-lg'></div>
 				)}
 				<Image
-					src={item?.images?.original.webp}
+					src={
+						item?.images?.original.url ??
+						'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3voWmwiyAUEKBaQpy7-DPfA7Y3TxGGFYAiQ&usqp=CAU'
+					}
 					alt={Math.random().toString()}
 					fill={true}
 					className={`rounded-lg ${
