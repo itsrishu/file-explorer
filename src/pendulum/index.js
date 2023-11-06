@@ -51,3 +51,37 @@ export default function App() {
 		</div>
 	)
 }
+
+// class TaskRunner {
+
+//     constructor() {/*TODO*/}
+
+//     push(task) {/*TODO*/}
+
+// }
+
+// let createTask = i => {
+
+//     return (onTaskComplete) => {
+
+//       setTimeout(() => {
+
+//         console.log(i);
+
+//         onTaskComplete();
+
+//       }, 1000);
+
+//     };
+
+//   };
+
+// var r = new TaskRunner();
+
+// r.push(createTask(1)); //Should run immediately
+
+// r.push(createTask(2)); //Should run after 1s
+
+// r.push(createTask(3)); //Should run after 2s
+
+// r.push(createTask(4)); //Should run after 3s
