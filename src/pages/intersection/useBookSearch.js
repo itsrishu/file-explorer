@@ -29,7 +29,7 @@ export const useBookSearch = (q, page) => {
 				return { title: it.title, pages: it.number_of_pages_median }
 			})
 			setHasMore(resp.docs.length > 0)
-			setBooks([...books, ...newArr])
+			setBooks((prev) => [...prev, ...newArr])
 		} catch (err) {
 			console.log(err)
 		} finally {

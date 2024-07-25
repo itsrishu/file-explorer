@@ -1,44 +1,37 @@
 import { useRef, useState, useEffect } from 'react'
 
 const Pendulum = () => {
-	const timer = useRef()
-	const [state, setState] = useState({
-		counter: 1,
-		flow: false,
-	})
+ const [val, setVal] = useState(1); // Start from 1
+  const [isIncrementing, setIsIncrementing] = useState(true); // Track the direction
 
-	useEffect(() => {
-		timer.current = setInterval(() => {
-			setState(({ counter, flow }) => {
-				if (counter < 5 && !flow) {
-					return {
-						counter: counter + 1,
-						flow,
-					}
-				} else if (counter === 5 && !flow) {
-					return {
-						counter: counter - 1,
-						flow: true,
-					}
-				} else if (counter > 1) {
-					return {
-						counter: counter - 1,
-						flow: true,
-					}
-				} else {
-					return {
-						counter: counter + 1,
-						flow: false,
-					}
-				}
-			})
-		}, 1000)
-		return () => {
-			clearInterval(timer.current)
-		}
-	}, [])
+  const loopId = useRef();
 
-	return <div>{state.counter}</div>
-}
+  useEffect(() => {
+    loopId.current = setInterval(() => {
+      setVal((prev) => {
+        if (prev === 10) {
+          setIsIncrementing(false);
+          return prev - 1;
+        } else if (prev === 1) {
+          setIsIncrementing(true);
+          return prev + 1;
+        } else {
+          return isIncrementing ? prev + 1 : prev - 1;
+        }
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(loopId.current);
+    };
+  }, [isIncrementing]);
+
+  return (
+    <div>
+      <h1>Pendulum</h1>
+      <div> {val}</div>
+    </div>
+  );
+};}
 
 export default Pendulum

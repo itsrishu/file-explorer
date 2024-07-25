@@ -38,8 +38,6 @@ const Grid = () => {
 		})
 	}
 
-	console.log(gridItems)
-
 	return (
 		<div className='grid grid-cols-3 grid-rows-3 gap-[10px] w-[200px]'>
 			{gridItems.map((item, idx) => (
